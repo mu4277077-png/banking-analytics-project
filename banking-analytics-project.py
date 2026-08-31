@@ -113,6 +113,34 @@ plt.title("Loan status Distribution")
 plt.savefig("Loan_status_count.png")
 plt.show()
 
+plt.figure(figsize=(8,5))
+sns.histplot(df["Age"], bins=20, kde=True)
+plt.title("Age Distribution of Customers")
+plt.savefig("age_distribution.png")
+plt.close()
+
+# ============ CUSTOMER & LOAN RISK ANALYSIS ============
+
+def get_risk_level(row):
+    if row["CreditScore"] < 580 or row["LoanStatus"] == "Rejected":
+        return "High Risk"
+    elif row["CreditScore"] < 700:
+        return "Medium Risk"
+    else:
+        return "Low Risk"
+
+df["RiskLevel"] = df.apply(get_risk_level, axis=1)
+
+print("\n===== RISK LEVEL DISTRIBUTION =====")
+print(df["RiskLevel"].value_counts())
+
+print("\nRisk Level by Region:")
+print(df.groupby("Region")["RiskLevel"].value_counts())
+
+# Save final version with risk column
+df.to_csv("banking_dataset_final.csv", index=False)
+print("\nSaved: banking_dataset_final.csv")
+
 
 # KPI Development 
 
