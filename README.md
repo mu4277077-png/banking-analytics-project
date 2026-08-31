@@ -36,7 +36,22 @@ Synthetic banking dataset — 2000 customers, columns: Age, Gender, Income, Regi
 3. Low-tenure customers ke liye onboarding/engagement campaigns banayein taake retention improve ho.
 
 ## Visualizations
-See PNG files in this repository: age_distribution.png, Income_distribution.png, Balance_by_accountype.png, correlation_heatmap.png, Loan_status_count.png
+## Visualizations
+
+### Age Distribution
+![Age Distribution](age_distribution.png)
+
+### Income Distribution
+![Income Distribution](Income_distribution.png)
+
+### Account Balance by Account Type
+![Balance by Account Type](Balance_by_accountype.png)
+
+### Correlation Heatmap
+![Correlation Heatmap](correlation_heatmap.png)
+
+### Loan Status Distribution
+![Loan Status Count](Loan_status_count.png)
 
 ## Tools Used
 Python, Pandas, NumPy, Matplotlib, Seaborn, SciPy, SQLite
